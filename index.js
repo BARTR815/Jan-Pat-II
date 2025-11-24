@@ -13,7 +13,7 @@ const getData = require('./jsonData/getData.js');
 
 app.use('/commands/send-message', sendMessage);
 app.use('/commands/edit-message', editMessage);
-app.use('/data/json-data', jsonData);
+app.use('/json-data/get-data', getData);
 
 app.get('/', (req, res) => {
   res.send('JP2');
