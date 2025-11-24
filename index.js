@@ -5,9 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const commandsMain = require('./commands/main');
+const sendMessage = require('./commands/sendMessage');
 
-app.use('/commands/main', commandsMain);
+app.use('/commands/send-message', sendMessage);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
