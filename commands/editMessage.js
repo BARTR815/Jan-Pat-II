@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
 
   try {
     await fetch(`https://discord.com/api/v10/channels/${channelID}/messages/${messageID}`, {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Authorization': `Bot ${botToken}`,
         'Content-Type': 'application/json'
