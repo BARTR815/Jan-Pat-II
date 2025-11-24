@@ -3,34 +3,20 @@ const fetch = require('node-fetch');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const { botToken, channelID } = req.body;
+  const { botToken, channelId, body } = req.body;
 
-  if (!botToken || !channelID) return res.sendStatus(400);
+  if (!botToken || !channelId || !body) return res.sendStatus(400);
 
   try {
-    await fetch(`https://discord.com/api/v10/channels/${channelID}/messages`, {
+    await fetch(`https://discord.com/api/v10/channels/${channelId}/messages`, {
       method: 'POST',
       headers: {
         'Authorization': `Bot ${botToken}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        content: "Hello World!",
-        components: [
-          {
-            type: 1,
-            components: [
-              {
-                type: 2,
-                label: "Click me",
-                style: 1,
-                custom_id: "button_1"
-              }
-            ]
-          }
-        ]
-      })
+      body: JSON.stringify(body)
     });
+
     res.sendStatus(200);
   } catch {
     res.sendStatus(500);
