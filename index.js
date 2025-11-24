@@ -9,9 +9,11 @@ app.use(express.json());
 
 const sendMessage = require('./commands/sendMessage.js');
 const editMessage = require('./commands/editMessage.js');
+const getData = require('./jsonData/getData.js');
 
 app.use('/commands/send-message', sendMessage);
 app.use('/commands/edit-message', editMessage);
+app.use('/data/json-data', jsonData);
 
 app.get('/', (req, res) => {
   res.send('JP2');
