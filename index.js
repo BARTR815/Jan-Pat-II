@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+const commandsMain = require('./commands/main');
+
+app.use('/commands/main', commandsMain);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
