@@ -12,7 +12,7 @@ app.use('/commands/send-message', sendMessage);
 app.use('/commands/edit-message', editMessage);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('JP2');
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
