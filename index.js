@@ -7,7 +7,7 @@ app.use(express.json());
 
 const sendMessage = require('./commands/sendMessage');
 
-app.use('/commands/send-message', sendMessage.js);
+app.use('/commands/send-message.js', sendMessage);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
