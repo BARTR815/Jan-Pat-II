@@ -1,18 +1,18 @@
-const express = require('express');
-const fetch = require('node-fetch');
+const express = require("express");
+const fetch = require("node-fetch");
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-	const { botToken, channelID, messageID} = req.body;
-	if (!botToken || !channelID || !messageID) {
+router.post("/", async (req, res) => {
+	const { botToken, channelID, messageID } = req.body;
+	if ( !botToken || !channelID || !messageID ) {
 		return res.status(400).json({"error":"Incomplete Body"})
 	}
 	try {
 		const response = await fetch (`https://discord.com/api/v10/channels/${channelID}/messages/${messageID}`, {
-			method: 'GET',
-			headers: {
-				'Authorization': `Bot ${botToken}`,
-				'Content-Type': 'application/json'
+			"method": "GET",
+			"headers": {
+				"Authorization": `Bot ${botToken}`,
+				"Content-Type": "application/json"
 			},
 		});
 		if (!response.ok) {
