@@ -21,4 +21,4 @@ app.get("/", (req, res) => {
 	res.send("JP2");
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Molib running on port ${PORT}`));
