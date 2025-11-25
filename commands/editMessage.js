@@ -3,8 +3,8 @@ const fetch = require("node-fetch");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-	const { botToken, channelID, messageID, body } = req.body;
-	if ( !botToken || !channelID || !messageID || !body ) {
+	const {botToken, channelID, messageID, body} = req.body;
+	if (!botToken || !channelID || !messageID || !body) {
 		return res.status(400).json({"error":"Incomplete Body"})
 	}
 	try {
