@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 		});
 		if (!response.ok) {
 			const errorResponse = await response.json().catch(() => null);
-			return res.status(response.status).json({"error":"Discord API Error","details":errorResponse});
+			return res.status(response.status).json({"error":"Discord API Error","details":`${errorResponse}`});
 		}
 		
 		const messageData = await response.json();
