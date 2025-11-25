@@ -26,4 +26,8 @@ router.get('/rank-4', (req, res) => {
 res.sendFile(path.join(__dirname, 'data', 'rank4.json'));
 });
 
+router.get('/rank-role', (req, res) => {
+res.sendFile(path.join(__dirname, 'data', 'rankRole.json'));
+});
+
 module.exports = router;
