@@ -21,7 +21,7 @@ app.use("/commands/json-parse", jsonParse);
 app.use("/json-data/get-data", getData);
 
 app.get("/", (req, res) => {
-	res.send(`Jan Pat II - "Created with passion"
+	res.send(`Jan Pat II - "Created with passion" | 
 	Latest Commit: ${latestCommit}`);
 });
 
