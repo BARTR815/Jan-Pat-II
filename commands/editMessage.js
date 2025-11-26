@@ -21,8 +21,8 @@ router.post("/", async (req, res) => {
 			return res.status(response.status).json({"error":"Discord API Error","details":`${errorResponse}`});
 		}
 		
-		const messageData = await response.json();
-		res.status(200).json(messageData);
+		const successResponse = await response.json();
+		res.status(200).json(successResponse);
 	} catch {
 		res.status(500).json({"error":"Server Error"})
 	}
