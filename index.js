@@ -2,7 +2,6 @@ const express = require("express");
 const fetch = require("node-fetch");
 const path = require("path");
 
-const latestCommit = process.env.RENDER_GIT_COMMIT?.slice(0, 7);
 const app = express();
 const PORT = process.env.PORT || 2137;
 
@@ -21,8 +20,7 @@ app.use("/commands/json-parse", jsonParse);
 app.use("/json-data/get-data", getData);
 
 app.get("/", (req, res) => {
-	res.send(`Jan Pat II - "Created with passion" | 
-	Latest Commit: ${latestCommit}`);
+	res.send(`Jan Pat II - "Created with passion"`);
 });
 
 app.listen(PORT, () => console.log(`Molib running on port ${PORT}`));
