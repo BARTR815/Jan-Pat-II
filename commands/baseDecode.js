@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.post("/", (req, res) => {
-	const encode = req.body.content
+	const decode = req.body.content
 	decodedContent = atob(decode)
 	res.status(200).json(decodedContent);
 });
