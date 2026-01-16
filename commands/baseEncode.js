@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 router.post("/", (req, res) => {
-	const encode = req.body.content
-	const encodedContent = btoa(encode);
+	const {content} = req.body;
+	const encodedContent = btoa(content);
 	res.status(200).json({content:`${encodedContent}`});
 });
 
