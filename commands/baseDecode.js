@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
 	const encode = req.body.content
-	decodedContent = btoa(decode)
+	decodedContent = atob(decode)
 	res.status(200).json(decodedContent);
 });
 
