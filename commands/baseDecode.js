@@ -3,8 +3,8 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
 	const decode = req.body.content
-	decodedContent = atob(decode)
-	res.status(200).json(decodedContent);
+	const decodedContent = btoa(decode);
+	res.status(200).json({content:`${decodedContent}`});
 });
 
 module.exports = router;
