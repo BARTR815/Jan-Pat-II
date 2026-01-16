@@ -11,13 +11,15 @@ const sendMessage = require("./commands/sendMessage.js");
 const editMessage = require("./commands/editMessage.js");
 const getMessageData = require("./commands/getMessageData.js");
 const jsonParse = require("./commands/jsonParse.js");
-const getJsonData = require("./commands/getJsonData.js");
+const baseDecode = require("./commands/baseDecode.js");
+const baseEncode = require("./commands/baseEncode.js");
 
 app.use("/commands/sendMessage", sendMessage);
 app.use("/commands/editMessage", editMessage);
 app.use("/commands/getMessageData", getMessageData);
 app.use("/commands/jsonParse", jsonParse);
-app.use("/commands/getJsonData", getJsonData);
+app.use("/commands/baseDecode", baseDecode);
+app.use("/commands/baseEncode", baseEncode);
 
 app.get("/", (req, res) => {
 	res.send(`Jan Pat II - "Created with passion"`);
